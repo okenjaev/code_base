@@ -11,7 +11,6 @@ char*
 nc_carr_init(u32 elem_size, u32 cap) {		
     char* arr = malloc(sizeof(struct carr_info) +	
 		 elem_size * cap);		
-
     arr += sizeof(struct carr_info);
     *(nc_carr_size(arr)) = 0;
     *(nc_carr_cap(arr)) = cap;
@@ -60,12 +59,14 @@ nc_carr_size(char* arr)
     return (u32*)(arr - 3 * sizeof(u32));
 }
 
+static
 u32*
 nc_carr_cap(char* arr)
 {
     return (u32*)(arr - 2 * sizeof(u32));
 }
 
+static
 u32*
 nc_carr_es(char* arr)
 {

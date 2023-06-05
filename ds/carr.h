@@ -29,12 +29,6 @@ nc_carr_init(u32 elem_size, u32 cap);
 u32*
 nc_carr_size(char* arr);
 
-u32*
-nc_carr_cap(char* arr);
-
-u32*
-nc_carr_es(char* arr);
-
 void
 nc_carr_free(char *arr);
 

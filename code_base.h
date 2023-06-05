@@ -1,21 +1,21 @@
 #ifndef CODE_BASE_H
 #define CODE_BASE_H
 
-
 #include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 
-typedef int8_t ci8;
-typedef int16_t ci16;
-typedef int32_t ci32;
-typedef int64_t ci64;
+typedef int8_t i8;
+typedef int16_t i16;
+typedef int32_t i32;
+typedef int64_t i64;
 
-typedef uint8_t cu8;
-typedef uint16_t cu16;
-typedef uint32_t cu32;
-typedef uint64_t cu64;
+typedef uint8_t u8;
+typedef uint16_t u16;
+typedef uint32_t u32;
+typedef uint64_t u64;
 
-typedef float cf32;
-typedef double cf64;
-
+typedef float f32;
+typedef double f64;
 
 #endif /* CODE_BASE_H */

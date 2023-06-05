@@ -3,39 +3,39 @@
 
 #include "../code_base.h"
 
-#define darray(x) x*
-#define darray_init(es, cp) (es*)nc_darray_init(sizeof(es), cp)
-#define darray_free(x) nc_darray_free((char*)x)
-#define darray_size(x) *nc_darray_size((char*)x)
-#define darray_remove(x, y) nc_darray_remove((char*)x, y)
+#define carr(x) x*
+#define carr_init(es, cp) (es*)nc_carr_init(sizeof(es), cp)
+#define carr_free(x) nc_carr_free((char*)x)
+#define carr_size(x) *nc_carr_size((char*)x)
+#define carr_remove(x, y) nc_carr_remove((char*)x, y)
 
-#define darray_append(x, y)				\
+#define carr_append(x, y)				\
     {							\
-        nc_darray_ensure_cap((char **) &x);		\
-	fuint32 *size = nc_darray_size((char*) x);	\
+        nc_carr_ensure_cap((char **) &x);		\
+	u32 *size = nc_carr_size((char*) x);	\
 	x[*size] = y;					\
 	*size += 1;					\
     }							\
 
 void
-nc_darray_ensure_cap(char** arr);
+nc_carr_ensure_cap(char** arr);
 
 void
-nc_darray_remove(char* arr, fuint32 index);
+nc_carr_remove(char* arr, u32 index);
 
-fchar*
-nc_darray_init(fuint32 elem_size, fuint32 cap);    
+char*
+nc_carr_init(u32 elem_size, u32 cap);    
 
-fuint32*
-nc_darray_size(char* arr);
+u32*
+nc_carr_size(char* arr);
 
-fuint32*
-nc_darray_cap(char* arr);
+u32*
+nc_carr_cap(char* arr);
 
-fuint32*
-nc_darray_es(char* arr);
+u32*
+nc_carr_es(char* arr);
 
 void
-nc_darray_free(char *arr);
+nc_carr_free(char *arr);
 
 #endif /* CARR_H */
